@@ -23,9 +23,56 @@ In this work, we address these limitations by presenting **Layer-wise Error Mode
 We demonstrate across Mistral, Qwen3, and Llama-3 families that KFAC-SVD achieves average perplexity improvements of 15%, while LEMS consistently outperforms existing search strategies, delivering significant zero-shot accuracy improvements of up to 4.7 p.p. that generalize to scales of 70B parameters.
 
 
-## 🚀 Quick Start: Core Execution Command
+## 🚀 Quick Start
 
-To immediately compress a model and recreate our core results, use the following template (replace `mistral_7b` with `llama3_8b` or `qwen3_8b` as needed).
+### 1. Evaluate Existing Models
+
+You can directly download and test our pre-compressed models from Hugging Face without running the compression pipeline locally.
+<details>
+  <summary><b>Models available on HuggingFace</b></summary>
+
+| Model | Search Type | Ratio | Hugging Face Name |
+| --- | --- | --- | --- |
+| **Llama-3-8B** | LEMS | 0.9 | `MoritzMo123/kfac-svd_lems_llama-3-8b_0.9` |
+|  | LEMS | 0.8 | `MoritzMo123/kfac-svd_lems_llama-3-8b_0.8` |
+|  | LEMS | 0.7 | `MoritzMo123/kfac-svd_lems_llama-3-8b_0.7` |
+|  | LEMS | 0.6 | `MoritzMo123/kfac-svd_lems_llama-3-8b_0.6` |
+|  | Uniform | 0.9 | `MoritzMo123/kfac-svd_uniform_llama-3-8b_0.9` |
+|  | Uniform | 0.8 | `MoritzMo123/kfac-svd_uniform_llama-3-8b_0.8` |
+|  | Uniform | 0.7 | `MoritzMo123/kfac-svd_uniform_llama-3-8b_0.7` |
+|  | Uniform | 0.6 | `MoritzMo123/kfac-svd_uniform_llama-3-8b_0.6` |
+| **Mistral-7B** | LEMS | 0.9 | `MoritzMo123/kfac-svd_lems_mistral-7b_0.9` |
+|  | LEMS | 0.8 | `MoritzMo123/kfac-svd_lems_mistral-7b_0.8` |
+|  | LEMS | 0.7 | `MoritzMo123/kfac-svd_lems_mistral-7b_0.7` |
+|  | LEMS | 0.6 | `MoritzMo123/kfac-svd_lems_mistral-7b_0.6` |
+|  | Uniform | 0.9 | `MoritzMo123/kfac-svd_uniform_mistral-7b_0.9` |
+|  | Uniform | 0.8 | `MoritzMo123/kfac-svd_uniform_mistral-7b_0.8` |
+|  | Uniform | 0.7 | `MoritzMo123/kfac-svd_uniform_mistral-7b_0.7` |
+|  | Uniform | 0.6 | `MoritzMo123/kfac-svd_uniform_mistral-7b_0.6` |
+| **Qwen3-8B** | LEMS | 0.9 | `MoritzMo123/kfac-svd_lems_Qwen3-8B_0.9` |
+|  | LEMS | 0.8 | `MoritzMo123/kfac-svd_lems_Qwen3-8B_0.8` |
+|  | LEMS | 0.7 | `MoritzMo123/kfac-svd_lems_Qwen3-8B_0.7` |
+|  | LEMS | 0.6 | `MoritzMo123/kfac-svd_lems_Qwen3-8B_0.6` |
+|  | Uniform | 0.9 | `MoritzMo123/kfac-svd_uniform_Qwen3-8B_0.9` |
+|  | Uniform | 0.8 | `MoritzMo123/kfac-svd_uniform_Qwen3-8B_0.8` |
+|  | Uniform | 0.7 | `MoritzMo123/kfac-svd_uniform_Qwen3-8B_0.7` |
+|  | Uniform | 0.6 | `MoritzMo123/kfac-svd_uniform_Qwen3-8B_0.6` |
+</details>
+
+```python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model_string="MoritzMo123/kfac-svd_lems_llama-3-8b_0.8"
+model = AutoModelForCausalLM.from_pretrained(
+    model_string,
+    trust_remote_code=True,
+    device_map="auto",
+)
+tokenizer = AutoTokenizer.from_pretrained(model_string)
+```
+
+### 2. Run Compression Yourself
+
+To compress a model from scratch and recreate our core results, use the following template (replace `mistral_7b` with `llama3_8b` or `qwen3_8b` as needed).
 
 > **Note:** For very large models (e.g., 70B), set the environment variable `export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` to avoid OOM. Use `eval=extended` for full zero-shot task sweeps or `eval=quick` for Wikitext-only evaluation.
 
@@ -138,34 +185,6 @@ To compress a model, you can mix and match different search and decomposition (S
 | `gfwsvd` | GFWSVD | Gradient Fisher-weighted SVD |
 | `dobi_svd` | DOBI-SVD | Double-sided bi-orthogonal SVD |
 
-
-## 💾 Export & Load Compressed Models
-
-### Exporting Compressed Models
-
-You can export a compressed model directly to a HuggingFace-compatible format, allowing you to save it locally or push it to the Hub:
-
-```bash
-python run.py model=llama3_8b svd=kfac_svd search=lems compression_target=0.8 \
-    export=hf export.save_path=./compressed-llama-3-8b \
-    export.push_to_hub=true export.hub_repo_id=your-name/compressed-llama-3-8b
-
-```
-
-### Load Pretrained Models from HF
-
-Once exported, you can download and use the compressed models seamlessly using standard HuggingFace tools:
-
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-model = AutoModelForCausalLM.from_pretrained(
-    "your-name/compressed-llama-3-8b",
-    trust_remote_code=True,
-    device_map="auto",
-)
-tokenizer = AutoTokenizer.from_pretrained("your-name/compressed-llama-3-8b")
-```
 
 ## ✨ Extra: Fine-Tuning
 
