@@ -1,0 +1,8 @@
+# MemViT greedy rank search (MRCS)
+method: memvit
+sensitivity_loss: energy1
+measurements_points: asvd_default
+target_metric: params
+enforce_rank_multiples_of: 8
+lower_bound: 0.3
+max_target_overshoot: 0.02

@@ -1,0 +1,8 @@
+# @package _global_
+# SVD-LLM with uniform rank allocation (comparison baseline)
+defaults:
+  - override /svd: svd_llm
+  - override /search: uniform
+
+svd:
+  use_cache: true

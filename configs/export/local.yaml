@@ -1,0 +1,4 @@
+# Save to local directory
+save_dir: ./compressed_model
+push_to_hub: false
+hub_repo_id: null

@@ -1,0 +1,12 @@
+# Outputs and cached artifacts
+results/
+outputs/
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/

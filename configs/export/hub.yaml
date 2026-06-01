@@ -1,0 +1,4 @@
+# Save locally and push to HuggingFace Hub
+save_dir: ./compressed_model
+push_to_hub: true
+hub_repo_id: null   # override: export.hub_repo_id=your-name/repo

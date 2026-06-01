@@ -1,0 +1,9 @@
+# @package _global_
+# For 70B+ models — CPU-offloaded SVD, tiny calibration batch
+defaults:
+  - override /svd: svd_llm_large
+  - override /search: uniform
+  - override /model: llama3_70b
+
+data:
+  calib_bs: 10

@@ -1,0 +1,4 @@
+# SVD-LLMv2 search
+# measurements_points is hardcoded to [2000] inside the class — not configurable.
+method: svd_llmv2
+sensitivity_loss: energy1

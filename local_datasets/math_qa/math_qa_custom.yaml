@@ -1,0 +1,28 @@
+tag:
+  - math_word_problems
+task: math_qa_custom
+dataset_path: parquet #/workspace/KFAC-SVD/local_datasets/math_qa/math_qa.py # abs path is safer!!!
+dataset_name: null
+dataset_kwargs:
+  data_files:
+    train: /workspace/KFAC-SVD/local_datasets/math_qa/MathQA/data/train-*
+    validation: /workspace/KFAC-SVD/local_datasets/math_qa/MathQA/data/validation-*
+    test: /workspace/KFAC-SVD/local_datasets/math_qa/MathQA/data/test-*
+output_type: multiple_choice
+training_split: train
+validation_split: validation
+test_split: test
+doc_to_text: "Question: {{Problem}}\nAnswer:"
+doc_to_target: "{{['a', 'b', 'c', 'd', 'e'].index(correct)}}"
+doc_to_choice: !function utils.doc_to_choice
+should_decontaminate: true
+doc_to_decontamination_query: "Question: {{Problem}}\nAnswer:"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true
+metadata:
+  version: 1.0

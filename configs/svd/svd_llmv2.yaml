@@ -1,0 +1,7 @@
+defaults:
+  - _common_svd
+
+method: svd_llm
+whitening_method: svd
+memory_efficient: false
+truncate: true

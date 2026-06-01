@@ -1,0 +1,3 @@
+name: unsloth/llama-2-7b
+gradient_ckpt: false
+fp32: false

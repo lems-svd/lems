@@ -1,0 +1,3 @@
+# Load rank allocation from a JSON file
+method: loadconfig
+layer_compression_json_path: gfwsvd_llama_20.json   # override with actual path

@@ -1,0 +1,6 @@
+# Shared defaults for all SVD / factorization configs.
+# Individual configs inherit via:  defaults: [_common_svd]
+use_cache: true
+progressive_compression: false
+blockwise_factorization: false
+do_post_calibration: "default"

@@ -1,0 +1,3 @@
+# Uniform rank allocation — no sensitivity analysis.
+method: uniform
+enforce_rank_multiples_of: 8

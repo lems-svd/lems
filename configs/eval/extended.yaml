@@ -1,0 +1,14 @@
+# Extended evaluation — zero-shot benchmarks + text generation + PPL on wikitext2/ptb/c4
+ppl_datasets:
+  - wikitext2
+  - ptb
+  - c4
+tasks:
+  - piqa
+  - openbookqa
+  - hellaswag
+  - arc_challenge
+  - arc_easy
+  - winogrande
+  - boolq
+  - math_qa_custom

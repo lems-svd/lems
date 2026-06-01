@@ -1,0 +1,6 @@
+defaults:
+  - _common_svd
+
+method: kfac_svd
+fast: false
+truncate: true

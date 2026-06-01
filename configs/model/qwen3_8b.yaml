@@ -1,0 +1,3 @@
+name: Qwen/Qwen3-8B
+gradient_ckpt: false
+fp32: false

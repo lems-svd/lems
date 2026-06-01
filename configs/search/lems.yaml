@@ -1,0 +1,12 @@
+# LEMS — the flagship search method.
+# Keys match LEMSSearch.__init__ parameters.
+# "method" is popped by run.py; "ratio_target", "sequence_length", "use_cache"
+# are injected from other config groups.
+method: lems
+sensitivity_loss: energy2_normal_klscaled
+measurements_points: "0.1"
+crosslayer_term: harmonicv2
+halpha: 0.0
+hgamma: 5.0
+enforce_rank_multiples_of: 8
+solver: gurobi

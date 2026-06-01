@@ -1,0 +1,5 @@
+defaults:
+  - _common_svd
+
+method: fwsvd
+alpha: 1.0

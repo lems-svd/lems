@@ -1,0 +1,5 @@
+calib_dataset: fineweb_16M
+calib_bs: 256
+search_samples: 32
+seq_len: 2048
+calib_data_mode: v1

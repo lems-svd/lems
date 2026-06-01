@@ -1,0 +1,3 @@
+name: unsloth/Llama-3.2-3B
+gradient_ckpt: false
+fp32: false

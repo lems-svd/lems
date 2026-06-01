@@ -1,0 +1,4 @@
+# Quick evaluation — perplexity on wikitext2 only
+ppl_datasets:
+  - wikitext2
+tasks: []

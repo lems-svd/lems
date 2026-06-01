@@ -1,0 +1,13 @@
+# @package _global_
+# State-space models (Mamba) — constant cross-layer term
+defaults:
+  - override /svd: kfac_svd
+  - override /search: lems
+  - override /model: falcon_mamba_7b
+
+search:
+  crosslayer_term: constant
+  sensitivity_loss: energy2_normal_klscaled
+  measurements_points: "0.1"
+  halpha: 0.0
+  hgamma: 5.0

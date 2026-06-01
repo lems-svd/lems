@@ -1,0 +1,16 @@
+# @package _global_
+# Flagship: KFAC-SVD + LEMS with tuned hyperparameters
+defaults:
+  - override /svd: kfac_svd
+  - override /search: lems
+
+svd:
+  use_cache: true
+  do_post_calibration: "False"
+search:
+  sensitivity_loss: energy2_normal_klscaled
+  measurements_points: "0.1"
+  halpha: 0.0
+  hgamma: 5.0
+  crosslayer_term: harmonicv2
+  enforce_rank_multiples_of: 8

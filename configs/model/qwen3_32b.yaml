@@ -1,0 +1,3 @@
+name: Qwen/Qwen3-32B
+gradient_ckpt: true
+fp32: false

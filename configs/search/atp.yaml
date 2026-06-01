@@ -1,0 +1,4 @@
+# ATP — approximate Taylor pruning-based search
+# ATP uses only method and beta; sensitivity profiling is skipped entirely.
+method: atp
+beta: 0.01

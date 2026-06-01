@@ -1,0 +1,7 @@
+defaults:
+  - _common_svd
+
+method: svd_llm
+whitening_method: cholesky
+memory_efficient: false
+truncate: false

@@ -1,0 +1,9 @@
+# LEMS with shared basis
+method: lems_shared
+sensitivity_loss: energy2_normal_klscaled
+measurements_points: "0.1"
+crosslayer_term: harmonicv2
+halpha: 0.0
+hgamma: 5.0
+enforce_rank_multiples_of: 8
+solver: gurobi

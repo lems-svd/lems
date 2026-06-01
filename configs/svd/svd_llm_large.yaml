@@ -1,0 +1,8 @@
+defaults:
+  - _common_svd
+
+# CPU-offloaded whitening for very large models (70B+)
+method: svd_llm
+whitening_method: cholesky
+memory_efficient: true
+truncate: true

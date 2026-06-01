@@ -1,0 +1,13 @@
+# MemViT+ with LEMS-style cross-layer optimisation
+method: memvit_plus
+sensitivity_loss: energy2_normal_klscaled
+measurements_points: "0.1"
+target_metric: params
+crosslayer_term: harmonicv2
+halpha: 0.0
+hgamma: 5.0
+enforce_rank_multiples_of: 8
+lower_bound: 0.3
+max_target_overshoot: 0.02
+one_shot: false
+optuna_trials: 10

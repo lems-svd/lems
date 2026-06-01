@@ -1,0 +1,15 @@
+# @package _global_
+# Basis sharing with uniform search (reproduce the original paper's results)
+defaults:
+  - override /svd: basis_sharing
+  - override /search: uniform
+  - override /data: wikitext2_basissharing  # calibration set generation is different from other approaches.
+  - override /model: llama2_7b
+
+seed: 2023  # Seed is critical to match the performance of the reference implementation.
+model:
+  fp32: true  # reference uses 32-bit precision, which is important for some models.
+compression_target: 0.8
+
+svd:
+  whitening_reg_increment: 7e-6  # matching the original implementation's whitening regularization.

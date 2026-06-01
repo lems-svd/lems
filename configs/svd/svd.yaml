@@ -1,0 +1,4 @@
+defaults:
+  - _common_svd
+
+method: svd

@@ -1,0 +1,45 @@
+# ──────────────────────────────────────────────────────────────────────
+# Top-level Hydra configuration for KFAC-SVD model compression.
+#
+# Usage:
+#   python run.py model=llama3_8b compression_target=0.8
+#   python run.py model=mistral_7b compression_target=0.7 svd=svd_llm search=uniform
+#   python run.py +preset=kfac_lems model=llama3_8b compression_target=0.8
+# ──────────────────────────────────────────────────────────────────────
+defaults:
+  - model: ???                    # REQUIRED — e.g. model=llama3_8b
+  - svd: kfac_svd
+  - search: lems
+  - data: wikitext2
+  - eval: quick
+  - export: none
+  - _self_
+  - optional preset: null
+
+# ── Mandatory ────────────────────────────────────────────────────────
+compression_target: ???           # REQUIRED — e.g. compression_target=0.8
+
+# ── Global settings ──────────────────────────────────────────────────
+target_metric: params             # params | flops
+name_omit:
+  - norm
+  - patch_embed
+  - head
+  - downsample
+  - decoder.project_
+  - dt_proj
+
+seed: 42
+device: cuda
+output_dir: ./outputs
+huggingface_cache_dir: /data/output/file_cache/huggingface/llm
+re_model: false                   # restore from checkpoint if it exists
+excel_tracking: ""                # set to a .xlsx path to enable tracking
+
+hydra:
+  output_subdir: null             # don't create .hydra/ subdir inside run dir
+  run:
+    dir: .                        # don't cd; we manage the output dir ourselves
+  sweep:
+    dir: .
+    subdir: .

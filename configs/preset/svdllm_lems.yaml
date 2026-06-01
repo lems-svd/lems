@@ -1,0 +1,11 @@
+# @package _global_
+# SVD-LLM + LEMS search
+defaults:
+  - override /svd: svd_llm
+  - override /search: lems
+
+search:
+  sensitivity_loss: energy2_normal_klscaled
+  measurements_points: "0.1"
+  halpha: 0.0
+  hgamma: 5.0

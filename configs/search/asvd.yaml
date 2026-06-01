@@ -1,0 +1,7 @@
+# ASVD sensitivity search
+method: asvd
+sensitivity_loss: ppl
+measurements_points: asvd_default
+target_metric: params
+min_ratio: 0.0
+max_ratio: 1.0

@@ -1,0 +1,65 @@
+# --------------------------------------------------------------------------------------
+# Core packages
+# --------------------------------------------------------------------------------------
+# Version used in compat base image
+torch==2.2.1
+torchvision==0.17.1
+
+# --------------------------------------------------------------------------------------
+# Additional packages
+# --------------------------------------------------------------------------------------
+timm
+transformers==4.55.0
+
+numpy==1.*
+openpyxl
+pulp
+
+# --------------------------------------------------------------------------------------
+# Downstream dependencies
+# --------------------------------------------------------------------------------------
+# mmlab dependencies
+rich # only for download functionality of mmlab datasets, can be removed if they are refactored.
+terminaltables
+pycocotools
+prettytable
+xtcocotools
+ftfy
+
+# --------------------------------------------------------------------------------------
+# Model specific dependencies
+# --------------------------------------------------------------------------------------
+calflops
+
+# --------------------------------------------------------------------------------------
+# Additional packages for VMamba
+# --------------------------------------------------------------------------------
+fvcore
+yacs
+torch-pruning
+fastcore
+matplotlib
+seaborn
+joblib
+onnx
+scikit-learn==1.2.0
+loguru
+cuda-python==12.1.0
+
+# --------------------------------------------------------------------------------------
+# Additional packages for LLMs
+# --------------------------------------------------------------------------------------
+datasets==4.4.2
+sentencepiece==0.1.99
+evaluate
+lm-eval==0.4.9.2
+cupy-cuda12x
+safetensors==0.5.3
+hydra-core>=1.3
+omegaconf>=2.3
+gurobipy
+optuna
+
+plotly
+kaleido
+hyppo

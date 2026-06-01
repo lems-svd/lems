@@ -1,0 +1,12 @@
+# ASVD+ with LEMS-style cross-layer optimisation
+method: asvd_plus
+sensitivity_loss: energy2_normal_klscaled
+measurements_points: "0.1"
+crosslayer_term: harmonicv2
+halpha: 0.0
+hgamma: 5.0
+enforce_rank_multiples_of: 8
+one_shot: false
+optuna_trials: 10
+min_ratio: 0.3
+max_ratio: 1.0

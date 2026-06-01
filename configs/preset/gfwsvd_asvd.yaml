@@ -1,0 +1,9 @@
+# @package _global_
+# GFWSVD + ASVD search
+defaults:
+  - override /svd: gfwsvd
+  - override /search: asvd
+
+search:
+  sensitivity_loss: kl
+  measurements_points: asvd_default
