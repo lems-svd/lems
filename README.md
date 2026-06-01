@@ -1,7 +1,7 @@
 # Advancing SVD-based LLM Compression via Layer-Wise Error Model Search
 
 This is the official repository for the paper **Advancing SVD-based LLM Compression via Layer-Wise Error Model Search**.
-Moritz Thoma, Maximilian Groezinger, Maximilian Forstenhäusler, Emad Aghajanzadeh, Manoj-Rohit Vemparala, Christos Anagnostopoulos, Pierpaolo Mori, Nael Fasfous, Alexander Frickenstein, Daniel Mueller-Gritschneder, Ulf Schlichtmann. **ICML 2026**
+*Moritz Thoma, Maximilian Groezinger, Maximilian Forstenhäusler, Emad Aghajanzadeh, Manoj-Rohit Vemparala, Christos Anagnostopoulos, Pierpaolo Mori, Nael Fasfous, Alexander Frickenstein, Daniel Mueller-Gritschneder, Ulf Schlichtmann*. **ICML 2026**
 
 <details>
   <summary>
