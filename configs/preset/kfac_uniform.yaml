@@ -1,8 +1,0 @@
-# @package _global_
-# KFAC-SVD with uniform rank allocation (ablation baseline)
-defaults:
-  - override /svd: kfac_svd
-  - override /search: uniform
-
-svd:
-  use_cache: true

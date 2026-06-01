@@ -1,7 +1,0 @@
-defaults:
-  - _common_svd
-
-# KFAC-SVD without rank truncation — keeps all singular components.
-method: kfac_svd
-fast: false
-truncate: false

@@ -411,18 +411,14 @@ All SVD configs inherit shared defaults from `configs/svd/_common_svd.yaml` (`us
 | Config | Method | Description |
 |---|---|---|
 | `kfac_svd` | **KFAC-SVD** (Ours) | Token-wise Fisher-based whitened SVD |
-| `kfac_svd_no_truncate` | KFAC-SVD (full rank) | Same without rank truncation |
 | `svd_llm` | SVD-LLM | Cholesky-whitened SVD |
 | `svd_llmv2` | SVD-LLM (SVD whitening) | SVD-based whitening variant |
-| `svd_llm_no_truncate` | SVD-LLM (full rank) | Same without rank truncation |
 | `svd_llm_large` | SVD-LLM (memory efficient) | CPU-offloaded whitening for 70B+ models |
 | `svd` | Vanilla SVD | Plain truncated SVD (no activation awareness) |
 | `asvd` | ASVD | Activation-scaled SVD |
 | `fwsvd` | FWSVD | Fisher-weighted SVD |
 | `gfwsvd` | GFWSVD | Gradient Fisher-weighted SVD |
 | `dobi_svd` | DOBI-SVD | Double-sided bi-orthogonal SVD |
-| `shampoo_svd` | Shampoo-SVD | Shampoo-preconditioned SVD |
-| `shampoo_sqrd_svd` | Shampoo²-SVD | Squared Shampoo variant |
 
 ### Search Methods (`search=`)
 
