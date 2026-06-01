@@ -20,14 +20,14 @@ In this work, we address these limitations by presenting **Layer-wise Error Mode
 * **LEMS** advances rank allocation by introducing a layer-wise error surrogate that integrates both local and global layer importance alongside a propagation bias, allowing us to determine global rank configurations efficiently as an Integer Linear Program (ILP).
 * **KFAC-SVD** improves decomposition quality by utilizing token-wise statistics, preventing the rank deficiency observed in prior Fisher-based SVD.
 
-We demonstrate across Mistral, Qwen3, and Llama-3 families that KFAC-SVD achieves average perplexity improvements of 15%, while LEMS consistently outperforms existing search strategies, delivering significant zero-shot accuracy improvements of up to 4.7 p.p. that generalize to scales of 70B parameters.
+We demonstrate across Mistral, Qwen3, and Llama-3 families that KFAC-SVD achieves average perplexity improvements of 15%, while LEMS consistently outperforms existing search strategies, delivering significant zero-shot accuracy improvements of up to 4.8 p.p. that generalize to scales of 70B parameters.
 
 
 ## 🚀 Quick Start
 
 ### 1. Evaluate Existing Models
 
-You can directly download and test our pre-compressed models from Hugging Face without running the compression pipeline locally.
+You can directly download and test our pre-compressed models from HuggingFace without running the compression pipeline locally.
 <details>
   <summary><b>Models available on HuggingFace</b></summary>
 
@@ -73,8 +73,9 @@ tokenizer = AutoTokenizer.from_pretrained(model_string)
 ### 2. Run Compression Yourself
 
 To compress a model from scratch and recreate our core results, use the following template (replace `mistral_7b` with `llama3_8b` or `qwen3_8b` as needed).
+Use `eval=extended` for full zero-shot task sweeps or `eval=quick` for Wikitext-only evaluation.
 
-> **Note:** For very large models (e.g., 70B), set the environment variable `export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` to avoid OOM. Use `eval=extended` for full zero-shot task sweeps or `eval=quick` for Wikitext-only evaluation.
+> **Note:** For very large models (e.g., 70B), set the environment variable `export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True` to avoid OOM.
 
 ```bash
 python run.py model=mistral_7b svd=kfac_svd search=lems compression_target=0.8 eval=extended
