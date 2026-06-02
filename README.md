@@ -6,6 +6,13 @@
 
 # Advancing SVD-based LLM Compression via Layer-Wise Error Model Search
 </div>
+<div align="center">
+  <a href="https://lems-svd.github.io" target="_blank"><img src="figures/project_page.svg" height="30" alt="Project Page"/></a>
+  &nbsp;
+  <a href="https://icml.cc/virtual/2026/poster/64908" target="_blank"><img src="figures/paper.svg" height="30" alt="Paper"/></a>
+  &nbsp;
+  <a href="https://huggingface.co/collections/MoritzMo123/lems-and-kfac-svd-compression" target="_blank"><img src="figures/huggingface.svg" height="30" alt="Hugging Face"/></a>
+</div>
 
 This is the official repository for the paper **[Advancing SVD-based LLM Compression via Layer-Wise Error Model Search](https://openreview.net/forum?id=IjIgNPFuCt)**.
 *Moritz Thoma, Maximilian Groezinger, Maximilian Forstenhäusler, Emad Aghajanzadeh, Manoj-Rohit Vemparala, Christos Anagnostopoulos, Pierpaolo Mori, Nael Fasfous, Alexander Frickenstein, Daniel Mueller-Gritschneder, Ulf Schlichtmann*. **ICML 2026**

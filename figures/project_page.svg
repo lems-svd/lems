@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="142" height="36">
+  <rect width="142" height="36" rx="18" fill="#363636" />
+  <svg x="14" y="9" width="16" height="18" viewBox="0 0 20 20">
+    <path fill="#ffffff" d="M10 0 L0 10 V20 H20 V10 L10 0 Z" />
+  </svg>
+  <text x="39" y="23.5" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="500">Project Page</text>
+</svg>
